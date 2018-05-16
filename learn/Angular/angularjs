@@ -1,0 +1,298 @@
+https://github.com/angular/angular-seed
+https://www.wikitechy.com/angularjs/angularjs-isolated-scopes
+http://adrianmejia.com/blog/2014/10/03/mean-stack-tutorial-mongodb-expressjs-angularjs-nodejs/ (MEAN)
+
+1 - What is angularjs ?
+-> Angularjs is Javascript Framwork, its developed by Google.
+-> it's support MVC Structure or pattern.
+-> it's create to SPA (single page application).
+-> it's allow to build well-structured, testable, maintainable frontEnd client side application.
+-> it's open source.
+-> it is basically used for binding javascript object with html UI element.
+-> it's run plain javascript and html, so you don't need any other dependancies to make it work.
+
+1.1 - What is single page application in angularjs.
+-> Single page application is a web application that fits on a single page.
+-> All your code (JS,HTML,CSS) is retrieved with a single page load.
+-> page is performed without refreshing the whole page.
+-> pros :- No Page Refresh, Better User Experience, Ability to Work Offline, reduce server traffic.
+-> Cons :- More Complex to Build, SEO, initial Load is Slow, Client should have javascript enable
+
+2 - Why Angularjs Uses?
+-> angularjs based on MVC structure that's help to well organize our web application.
+-> its follow two-way data-binding, when model is changed automatically view is updated or changed.
+-> its support to build own directive, custome event, reusable code, abstact DOM manipulation logic.
+
+3 - Advantage of angularjs ?
+-> support MVC pattern, reusable code.
+-> support powerfull data-binding to help of HTML & Scope(Model).
+-> easily customize as per our requirement.
+-> inbuild form validation support.
+-> create own directive and service.
+
+4 - How angularjs different from other JS?
+-> Angularjs directly work with DOM.
+-> Angularjs use POJO (plain old javascript objects).
+
+5 - AngularJS Feature
+-> Module: It is like a container for different components/controller. it's include controller,service,factory etc.
+-> Controller : Angular Controller control the data, process the data and send the data, maintain bussiness logic here.
+-> Directive: It is combination of AngularJS template markups and supporting javascript code.
+-> Template: It is a combination of html, attributes, directive & filters.
+-> Scope: It is Javascript object that refers to the application module.
+-> Expression: It is much like JavaScript expression. It use {{Expression}} to show data in html.
+-> Data binding: Data binding is synchronized data between model & view.
+-> MVC Pattern: MVC pattern also called model view controller.
+-> Validation: AngularJS provides you built in validation directive to validate from client side.
+-> Filters: It is used for format data before display users. it's not change original value/Object.
+-> Services: It calls reusable business logic.
+-> Routing: It helps you to divide your app in multiple views and bind different view to controllers.
+-> Dependency Injection: It is software design pattern that deals with how component get hold of their dependencies.
+-> Injector: Container of dependency injection.
+-> Testing: Unit test doesn't need to load all the app, just loading that specific module is enough to start unit testing.
+
+-> How Many Way to Inject Dependancy in Angularjs?
+	- Passing a dependency as Function Arguments (break dependancy when we minify the application)
+		app.controller("ProductController", function ($scope) { $scope.message = "Hey I am passed as function argument" });
+	- Passing a dependency as Array Arguments
+		var app = angular.module('app', []);
+		function ProductController($scope) {$scope.greet = "Infragistics";};
+		app.controller('ProductController', ['$scope', ProductController]);
+	- Passing a dependency using the $inject service
+		var app = angular.module('app', []);
+		function ProductController($scope,$http) { $scope.greet = $http.get("api.com");};
+		app.controller('ProductController', ['$scope','$http', ProductController]);
+	- Another Way to $inject.
+		function ProductController($scope){$scope.greet = "Foo is Not Great!5";}
+		ProductController.$inject = ['$scope'];
+		app.controller('ProductController', ProductController);
+
+	this way to passing dependancy is not break when we minify the application.
+
+6 - Different between Jquery and Angularjs?
+-> jQuery and AngularJS have some common features like Unit test runner, animation support, AJAX/JSONP but they also have some differences.
+-> AngularJS came with RESTful API whereas we don't have that in jQuery.
+-> AngularJS supports the MVC pattern whereas jQuery doesn't.
+-> AngularJS has the feature called Two Way Data Binding whereas we don't have that in jQuery.
+-> Deep Linking Routing is supported by AngularJS whereas jQuery doesn't.
+-> The AngularJS file size is quite heavier than that of the jQuery file size.
+-> We can prefer AngularJS only if we are developing a heavy web application.
+
+#) Deep Linking in Angularjs ?
+-> Deep linking is the usage of the URL, which will take to specific page (content) directly without traversing application from home page. 
+-> It helps in getting indexed so that these links can be easily searchable by search engines like Google, Yahoo.. etc.
+-> Using Angular, the deep linking is default done with the # prefix (when the HTML5 mode is not set).
+
+7 - What is Service is Angularjs ?
+-> A special unit of code which can be used across differents controller.
+-> service is singleton.(single object is use in all application).
+-> same instance is maintained throughout the life time of application.
+-> controller are created when they are needed and destroyed if they are not in use.
+-> two type of service in angularjs. 
+	1) built in service 2) custome service
+	- built in :- $http,$log,$location, $timeout, $interval 
+-> three way to develop custome service 
+	1) Factory 2) provider 3) service
+
+
+8 - Angular Bootstrap ?
+-> There are two ways to bootStrap Angular Application. 
+	1.Automatic BootStrap (Coffee by Machine)
+	2.Manual BootStrap (Handmade coffee, you can face some trouble)
+-> 1. Automatic Bootstrap
+	-> 	When DOM content is loaded, Angular looks for the ngApp directive which designates application root.
+		If it finds ngApp directive. 
+		It loads the module associated with this directive.
+		Start with ng-app="" directive.
+
+-> 2. Mannual Bootstrap
+	-> You do not need to attach ng-app directive with the html element.
+	-> You call function angular.bootstrap(document,['myApp']).
+
+	For Example : - 
+		angular.element(document).ready(function() {  
+            angular.bootstrap(document, ['myApp']);  
+        }); 
+
+    -> Before bootstrapping the process you need to add controllers, directives and services etc.
+9 - What is Constant in angularjs?
+-> A constant can be injected everywhere. A constant can not be intercepted by a decorator, that means that the value of a constant should never be changed (though it is still possible to change it programmatically in Angular 1.x).
+   -Example
+	angular.module('app', []); 
+	app.constant('MOVIE_TITLE', 'The Matrix');
+	app.controller('MyController', function (MOVIE_TITLE) {
+	  console.log(MOVIE_TITLE);
+	});
+
+10 - One Way Data Binding ? 
+-> One-Way Data Binding simply means that HTML elements reflect the change. When the model values change the HTML elements don't change the values in the model.
+-> one direction binding. 
+-> In other words, when the model changes, this change is reflected in the view but the view doesn't change the model. 
+
+11 - Two Way Data Binding?
+-> One of the core features of AngularJS which makes it popular is two way data binding. In two way data binding, any changes to the model are immediately reflected in the View and any changes in the View updates the model.
+
+12 - Different about watch, watchgroup, watchCollection in angularjs?
+-> Watch : - This function is used to observe changes in a variable on the $scope. It accepts three parameters: expression, listener and equality object, where listener and equality object are optional parameters.
+	Syntax : - $watch(watchExpression, listener, [objectEquality])
+-> WatchGroup : - This function is introduced in Angular1.3. This works the same as $watch() function except that the first parameter is an array of expressions to watch.
+	Syntax : - $watchGroup(watchExpression, listener)
+-> WatchCollection : - This function is used to watch the properties of an object and fires whenever any of the properties change. It takes an object as the first parameter and watches the properties of the object.
+	Syntax : - $watchCollection(obj, listener)
+
+13 - What is a digest cycle in AngularJS?
+-> In each digest cycle Angular compares the old and the new version of the scope model values. The digest cycle is triggered automatically. We can also use $apply() if we want to trigger the digest cycle manually.
+
+14 - Explain how $scope.$apply() works?
+-> $scope.$apply re-evaluates all the declared ng-models and applies the change to any that have been altered (i.e. assigned to a new value) Explanation: $scope.apply() is one of the core angular functions that should never be used explicitly, it forces the angular engine to run on all the watched variables and all external variables and apply the changes on their values.
+
+15 - $routeProvider and $stateProvider?
+->  $routProvider : - The page can only contain single ng-view on page
+	If your SPA has multiple small components on the page that you wanted to render based on some conditions, $routeProvider fails. (to achieve that, we need to use directives like ng-include, ng-switch, ng-if, ng-show, which looks bad to have them in SPA)
+	You can not relate between two routes like parent and child relationship.
+	You cannot show and hide a part of the view based on url pattern.
+	You can add 'ngRoute' in dependancy.
+
+	Example : - $routeProvider
+				        .when('/contact/', {
+				            templateUrl: 'app/views/core/contact/contact.html',
+				            controller: 'ContactCtrl'
+				        })
+				});
+->  $stateProvider : - Another great feature is the ability to have multiple ui-views in a template.
+	While multiple parallel views are a powerfull feature, you'll often be able to manage your interfaces more effectively by nesting your views, and pairing those views with nested states.
+	you can add 'ui-Router' in dependancy.
+
+	Example : - $stateProvider
+	            .state("contact", {
+	                url: "/contact/",
+	                templateUrl: '/app/Aisel/Contact/views/contact.html',
+	                controller: 'ContactCtrl'
+	            });
+
+16) different about Factory, service , provider?
+	- Factory : A factory is a simple function which allows you to add some logic before creating the object. It returns the created object.
+				app.factory('serviceName',function(){ return serviceObj;})
+	
+	- Service : A service is a constructor function which creates the object using new keyword. You can add properties and functions to a service object by using this keyword. Unlike factory, it doesn’t return anything.
+				app.service('serviceName',function(){})
+
+	- Provider : A provider is used to create a configurable service object. It returns value by using $get() function.
+				 //creating a service
+				app.provider('serviceName',function(){});
+				 
+				//configuring the service
+				app.config(function(serviceNameProvider){}); 
+    - The difference between a factory and a service is that a factory injects a plain function so AngularJS will call the function and a service injects a constructor. 
+
+    - All the providers are instantiated only once. That means that they are all singletons.
+	- All the providers except constant can be decorated.
+	- A constant is a value that can be injected everywhere. The value of a constant can never be changed.
+	- A value is just a simple injectable value.
+	- A service is an injectable constructor.
+	- A factory is an injectable function.
+	- A decorator can modify or encapsulate other providers except a constant.
+	- A provider is a configurable factory.
+	https://gist.github.com/demisx/9605099
+
+17) what is event?
+	- event is just a way of other parts of our application, when a change occurs.
+	- Event Raising is Notify a change. (Publishing to an event / Event Producer / Raiser / Notifier).
+	- Event Handling is Capture the Raised Event and handle the change (execute our own logic). (Subscribing to an event / Event Customer / Handler / Receiver)
+	- Angular is Event is Not DOM related Event or not UI related Event. (noted)
+	- Angular Provide 2 way of event
+		1. Pre - defined (ng-click,ng-blur etc)
+		2. Custome (event is created/introduced by developer)
+
+	- Custome event: 
+		how to raise Event 										how to handle event
+		(notify/publish/product)								(receive/subscribe/consume)
+		use $broadcast and $emit								use $on
+		at two levels:											at two levels:
+		1. $scope levels 										1. $scope level
+		2. Rootscope level 										2. $rootscope level
+
+
+	- $broadcast event : (flow top to bottom)
+		$scope.$broadcast("empSalChanged",{sal : 4500}); 
+		$scope.$on("empSalChaned",function(e,data){
+			var newSal = data.sal;	//4500
+		});
+
+	- $emit event : (flow bottom to top)
+		$scope.$emit("empSalChanged",{sal : 4500});
+		$scope.$on("empSalChanged",function(e,data){
+			var newSal = data.sal; //4500
+		})
+18)  List some tools for testing AngularJS applications?
+	- Karma : Karma is a JavaScript command line tool that can be used to spawn a web server which loads your application’s source code and executes your tests. Karma is a NodeJS application and should be installed through NPM/YARN.
+	- Jasmin : Jasmine is a behavior-driven development framework for JavaScript that has become the most popular choice for testing AngularJS
+			   applications.
+	- Angular-mocks : AngularJS also provides the ngMock module, which provides mocking for your tests. This is used to inject and mock
+					  AngularJS services within unit tests.
+
+19) How do you share data between controllers in AngularJs?
+
+	- We can share data by creating a service,
+	- Services are easiest, fastest and cleaner way to share data between controllers in AngularJs.
+	- There are also other ways to share data between controllers, they are
+
+	-> Using Custome Events ($broadcast,$emit,$on)
+	-> $parent, nextSibling, controllerAs
+	-> using the $rootScope
+
+20) Angular Expression?
+	- Bind Expression Data in view or HTML.
+
+21) different between $ and $$ in angularjs.
+	- single $ for reserved, public identified / object.
+	- double $$ for reserver, private identified / object.
+	- If you inspect a Scope, you may also notice some properties that begin with $$. These properties are considered private, and should not be accessed or modified.
+
+22) What is the difference between a link and compile in Angular JS?
+
+	- Compile function: To template DOM manipulation and to gather all the directives, the compile function is used.
+	- Link function: To register DOM listeners as well as for the instance DOM manipulation, the Link function is used.
+
+23) ng-switch example or syntax?
+	- <div ng-switch="myVar">
+		  <div ng-switch-when="dogs">
+		    <h1>Dogs</h1>
+		  </div>
+		  <div ng-switch-when="tuts">
+		    <h1>Tutorials</h1>
+		  </div>
+		  <div ng-switch-when="cars">
+		    <h1>Cars</h1>
+		  </div>
+		  <div ng-switch-default>
+		    <h1>Switch</h1>
+		    <p>Select topic from the dropdown, to switch the content of this DIV.</p>
+		</div>
+	</div>
+
+24) How to change start and end symbols used for AngularJS expressions?
+	- Passing the $interpolateprovider in the config can help us change the start and end symbols used in our Angular JS expressions.
+	- startSymbol "{{" And EndSymbol "}}" bydefault.
+	- Example : 
+		angular.module("myApp",[]).config(function($interpolateProvider) {
+		    $interpolateProvider.startSymbol('//');
+		    $interpolateProvider.endSymbol('//');
+		});
+		<div ng-controller="DemoController as demo">
+		    //demo.label//
+		</div>
+
+25) different about angular 1 and angular 2?
+	show link : - https://www.onlineinterviewquestions.com/angular-js-interview-questions/#.Wuk89YhubIU
+
+26) native application?
+	- A native application (native app) is an application program that has been developed for use on a particular platform or device. Because native apps are written for a specific platform, they can interact with and take advantage of operating system features and other software that is typically installed on that platform.
+
+
+27) form validation?
+
+
+28) eval and related?
+
+29) 

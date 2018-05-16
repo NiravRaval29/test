@@ -1,0 +1,134 @@
+1 - What is new in angularjs 5?
+1) Package Upadates
+	- Angular CLI 1.5 in angularjs 5.0.0
+	- Typescript was updated version 2.4
+	- RXJS was Updated to version 5.5
+
+2) What is Angular CLI?
+	- COMMAND LINE INTERFACE FOR ANGULAR APPS
+	- Angular cli is a command line interface to scaffold and build angular apps using nodejs style (commonJs) modules
+
+3) TypeScript?
+	- TypeScript is a typed superset of Javascript that compiles to plain java script.
+	- It's used Any Browser, Any Host, Any OS, Open Source.
+	- It's Develop by MicroSoft.
+	- TypeScript is a strongly typed, object oriented, compiled language.
+
+4) ECMAScript?
+	- ECMA stands for - European Computer Manufacturer's Association. 
+	  ECMAScript is a standard for a scripting language. 
+	  It specifies the core features that a scripting language should provide and how those features should be implemented. Javascript was originally created at Netscape, and they wanted to standardize the language.
+
+5) RxJS?
+	- RxJS is a javascript library that brings the concept of "reactive programming" to the web.
+	  Reactive programming is just a different way of building software applications. Essentially, your software is built to "react" to changes that happen (like click events, data being fetched, etc) instead of the typical way of writing software where we explicitly write code (aka "imperative" programming) to handle those changes.
+
+6) Angular Universal Transfer API?
+	- Easily Share App state between server and client version.
+	- ServerTransferStateModule has been added.
+	- Optimize fetching data over Http.
+	- More DOM Manupulations/support.
+
+7) Importand lines
+	- AppModule is RootModule in angularjs Applicaiton. (app.module.ts)
+	- AppComponent is RootComponent in angularjs Component. (app.component.ts)
+	- Angular App : one or more modules.
+	- Modules : One or More Components and services.
+	- Components : Html + Class.
+	- Services : Bussiness Logic.
+	- Module interact and ultimately render the view in the browser.
+	- Import and Export Module.
+	- App Start with Main.ts file to include bootstrap module.
+	- main.ts -> app.module.ts -> app.component.ts -> render html and show model value .
+
+8) What is Component in angularjs 5?
+	- there is 3 part of divide in component.
+		1. Template : that refer View and html.
+		2. Class : nothing but code is support the view. and that code create typeScript. its include data & Methods.
+		3. MetaData : include Information and Decorators. 
+
+		Decoration : Decorators are a design pattern that is used to separate modification or decoration of a class without modifying the original source code. 
+		AngularJS, decorators are functions that allow a service, directive or filter to be modified prior to its usage. its use two way. 1. $provide.decorator, 2.module.decorator.
+
+		- app.module.ts file have import then use in  all component in @ngModule decorator in declarations array.
+		import { TestComponent } form './test/test.component'; 
+		ex :-  @ngModule ({
+				declaration : [
+					AppComponent,
+					TestComponent
+				]
+		})
+
+		- ng g c <component name >
+		- @component have 3 property -> selector, templateUrl, styleUrls.
+
+
+9) what is interpolation in angularjs 5?
+	- interpolation bind the data from the class to the template.
+	- interpolation markup with embedded expressions. 
+	- angularjs 1.x expression is defined as angularjs 5 in interpolation
+	- {{ expression }} - this is interpolation in angularjs .
+
+10) What is new in angularjs and benifit of angularjs 5?
+	- Build Optimization (remove unnecessary part runtime code and decrease javascript file.)
+	- Package Updated. (CLI 1.5, TypeScript 2.4, RxJS 5.5)
+	- Angular Universal API and DOM. (support for sharing code between server and client-side version of an applicaiton)
+	- Router Hook. (developer can track router cycle from start of running guards till activation is  completed)
+	- Number , Date and Currency pipes updated. (international number , date , currency have been updated).
+
+11) How Many way to specified Selector in Component?
+	- There are three way to specified Selector in Component.
+		1. Html Tag ('app-test', <app-test></app-test>).
+		2. Class ('.app-test', <div class="app-test"></div>)
+		3. Attribute ('[app-test]', <div app-test></div>)
+
+12) How to change templateUrl in Component?
+	- templateUrl : '/path/filename.html'
+	- template : '<div >Inline Template </div>'  
+
+13) property binding , style binding, class binding?
+	- property binding : - [id]="myId", bind-id="myId",
+	- Style binding :- [style.color]="'red'", [ngStyle]="object access here",  
+	- class binding :-  [class]="successClass", class="text-success", [ngClass]="access object here".
+	- event binding :- (click)="onClick($event)" - $event is given all information about DOM Event was reased.
+
+14) Two Way data binding?
+	- [()] :- [(ngModel)]="name"
+	- include @angular/forms module in app.module.ts
+	- add in formsModule in imports Array.
+
+15) Component interaction.?
+	- App component - child component.
+	- both component data communicate each other.
+	- @input Decoration - send data parent to child.
+	- @output Decoration - receive data to child to parent or parent to other.
+
+16) pipe sign?
+	- lowercase : {{ name | lowercase}}
+	- uppercase : {{ name | uppercase}}
+	- titlecase : {{ name | titlecase}}
+	- titlecase : {{ name | titlecase}}
+	- slice : {{ name | slice:3 : 5}} 3- starting point, 5 - index	
+	- json : {{ Name | json}}
+	- number : {{5.678 | number : '1.2-3'}} 2 min len, 3 max len
+	- percent : {{0.25 | percentage}}
+	- currency : {{0.25 | currency }} default is US Doller
+				 {{0.25 | currency : 'EUR' : 'code' }} , result : EUR0.25
+	- Date : {{ date | date:'short'}} (short, shortDate,shortTime, midium,midiumDate,midiumTime, long,lognDate,longTime )   
+
+17) Dependancy injection?
+	- DI is a coding pattern in which a class receives its dependancy from external source rather than creating itself.
+
+18) Services ?
+	- Services is a class with specific perpose.
+	- share Data
+	- implement application logic
+	- external interaction like Database.	
+	- service.ts
+	- ng g s serviceName
+	- import service in app.module.ts file and insert service in provider array.
+
+19) @Injectable()?
+	- import { Injectable } from '@angular/core'.
+	- its tell angular this service might itself have injected dependancy.
+https://www.youtube.com/watch?v=eIoWsJZY4qo&index=3&list=PL9fcHFJHtFaalzA6n_EqY1cIgqWy0J1eU
