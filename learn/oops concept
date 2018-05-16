@@ -1,0 +1,67 @@
+OOPS Concept (Object Oriented Programming Concept)
+--------------------------------------------------
+- Real life things into your code it's called object oriented Programming.
+- Computer Programming Software Design.
+
+1) Object.
+	- Object is Piece of code that represent a real life things or real life entity.
+	- Object is instance of type class.
+	
+
+		- Student s; // s is object of student class.
+
+2) Class.
+	- Class is collection of object.
+	- Class is specification of object.
+	- Class include two things.
+		1. Attribute (like color,type,height,weight etc) (also know data member)
+		2. Functionality (play(),pause(),running() etc) (also know behaviors)
+	Example :
+		class student {
+			var name;
+			var rollno;
+			var marks;
+
+			function attendance(){}
+			function examination(){}
+		}
+
+		Student s; //defined object of class.
+
+3) Abstraction.
+	- how to hide data and show relevant data in abstraction.
+	- other lang... taking necessary details and ignoring the rest details.
+	- you dont know how long much code is behind the object. just related object to use it. ex - printf() dnt know real code just used it developer.
+
+
+4) Encapsulation.
+	- simple way to say Encapsulation is Protection. 
+	- to applies Access Specifier in you Code.
+	- 3 way to use Access Specifier :
+		- Private : all variable are only accessible within the class boundry. Nobody can access outside the class.
+		- Public : All variable are accessible every class.
+		- Protected : Protected members are accessible in the class that defines them and in classes that inherit from that class.
+	- interface : (allow to private or protected data into class)
+		1. Data & Functionality bound together within a class.
+		2. Controlling the access.
+
+5) Inheritance.
+	- reusability code, extensibility.
+	- one parent class property use in child class this is inheritance.
+
+
+6) Polymorphism.
+	- one name multiple form.
+	- function overloading :  same name but argument is different. add(),add(x),add(x,y)
+	- function overridding :  same name and same argument but diff type.
+
+10) Benefits of object-oriented technology include:
+
+	Ease of software design
+	Productivity
+	Easy testing, debugging, and maintenance
+	It’s reusable
+	More thorough data analysis, less development time, and more accurate coding, thanks to OOP’s inheritance method
+	Data is safe and secure, with less data corruption, thanks to hiding and abstraction
+	It’s sharable (classes are reusable and can be distributed to other networks)
+

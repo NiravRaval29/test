@@ -1,0 +1,131 @@
+1) MongoDB?
+	- MongoDB cross-plateform, document-oriented database.
+	- MongoDB works on concept of collection and document.
+	- MongoDB have non relational database and noSQL database use.
+
+2) collection ?
+	- Collection is a group of MongoDB documents.
+	- Collection = table (relational database)
+
+3) Document ?
+	- Document is a set of key-value pairs.
+	- Document have dynamic schema.
+	- Dynamic schema means that documents in the same collection do not need to have the same set of field or structure.
+	-
+
+4) Differents about RDBMS and MongoDB?
+	RDBMS									MongoDB
+	- database 								- database
+	- table 								- collection
+	- tuple/row								- document
+	- column 								- field
+	- table join 							- embedded documents
+	- primary key 							- primary key
+	  (not null and unique value)			  (Default key _id provided by mongoDB itself)
+
+
+5) where to use mongoDB?
+	- Big Data
+	- Content Management and Delivery.
+	- Mobile and Social Infractructure.
+	- User Data Management.
+	- Data Hub.
+
+6) which database name already have when installed mongoDB?
+	- Test database 
+	- write : db (command)
+			show database list have in mongodb.
+
+7) mongodb IDE?
+	- mongoChef or studio3t both are same. just name different.
+
+8) Command list ?
+	- USE : use Command create database in mongodb.
+			syntax : use <DATABASE NAME> , use fruits
+			if same name have any database then not create the new database just switch database.
+
+	- db : This command through you know which database have you work now.
+		   show dbs -> command through show all db in mongodb.
+	
+	- create table :
+			- db.testCollection.insert({"name" : "test"});
+			- testCollection is our collection name (table name).
+
+	- drop database : 
+			- db.dropDatabase();
+			- this command through drop current database.
+
+	- create collection : 
+			- db.createCollection("hostel") -> this command create collection name means create table name in database.
+			- show collections -> command through show all collection in current database.
+			- db.newCollection.insert("name":"test"); -> this is another way to create collection. 
+	
+	- fetch record in collection :
+			- db.collection.find() -> this command through find record in perticuler collection or table.
+			- db.collection.findOne() -> only one row fetch in this command.
+			- db.collectionName.find({"gender":"male"}) -> get all record which gender have male.
+			
+	- Conditional Operation use in Mongo
+
+			- $lt :- less than
+			- $lte :- less than equal to
+			- $gt :- greater than
+			- $gte :- greater than equal to
+			
+			- db.collectionName.find({"age" : {$lt : "36"} }) -> get all record which age have less then 36.
+			- db.collectionName.find({ $or : [
+												{"age" : {$gt : 36}},
+												{"gender" : "male "}
+											]})
+											(get list which have age greater than 36 or gender has male. any once conditional true once time)
+
+			- db.collectionName.find({ $and : [
+												{"age" : {$gt : 36}},
+												{"gender" : "male "}
+											]})
+											(get list which have age greater than 36 or gender has male. both conditional true once time)
+
+	- update the record 
+			- db.collectionName.update(
+										{"_id" : ObjectId("12345678123456781234567800")},
+										{$set : {"phone" : "9408549600"} }
+										)
+
+			- {multi : true} :- multiple record are affected when this condition you write.
+			- db.collectionName.update(
+										{"age" : {$lt : "30"}},
+										{$set : {"salary" : "12500" }},
+										{multi : true}
+									)
+	- Delete the record or document 
+			- db.collectionName.remove({"_id" : ObjectId("123456781234567812345678")});
+			- db.collectionName.remove({ "gender" : "female"},1); 	-> remove only one female in DB.
+			- db.collectionName.remove({"gender" : "female"}) -> remove all female in database.
+
+	- Select field Query
+			- db.collectionName.find({},{"FirstName" : 1, "_id" : 0, "LastName" : 1});
+			- here first empty {} is defined to condition perpose. if blank that find within the all record.
+			- if any field you want to show then write 1 otherwise 0 for hidden the field.
+
+			- db.collectionName.find({"age" : {$lt : "30"}}, {"FirstName" : 1, "age" : 1}).pretty(); 
+			  This Query show firstname and age who has lessthan 30.
+			  pretty() function use while you want to specifice order in field name.
+
+	- limit, skip, sort
+			- Limit : db.collectionName.find({},{"FirstName" : 1, "_id" : 0, "LastName" : 1}).limit(3)
+			  		  (Only Show 3 document/record)
+			- skip : db.collectionName.find({},{"FirstName" : 1, "_id" : 0, "LastName" : 1}).skip(3)
+					 (First 3 Record skip )
+			- sort : db.collectionName.find({},{"FirstName" : 1, "_id" : 0, "LastName" : 1}).sort({"age" : 1})
+					 (sorted order 1.asceding, -1.desceding)
+
+	- Index (you know book me kafi sare chapter ate hai or usko so index se apko pta chal jata hai konsi chapter kaha hai waise hi ye index 
+			through wo sare database page me dekhne nahi jata perticuler index through wo find karke fast excute hota hai.
+			indexes use where there is unique number ) 
+			- db.collectionName.ensureIndex({"email":1});
+			- db.collectionName.getIndex()
+			- db.collectionName.dropIndex({"email":1})
+	- Aggregation 
+			- aggregation is operation mathemetical task of document and output them.
+			- db.collectionName.aggregate([{$group : {_id : "$gender", Total : {$sum : 1}}}])
+			- db.collectionName.aggregate([{$group : {_id : "$gender", MaxAge : {$max : "$Age"}}}])

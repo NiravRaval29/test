@@ -1,0 +1,45 @@
+NPM Interview Question.
+-----------------------
+1) what is NPM ?
+	- NPM is package management in javascript.
+	- It's way to share your code, with other developer and reuse the code from other developer and easily manage different version of code.
+	- package is nothing but a directory one or more module along with special file called package.json.
+	- package.json has matadata about the package.
+	- npm registry has provide one plateform that all devloper has upload that code and reuse other developer in same code.
+
+2) Npm help Command?
+	- npm help command show you all command and how to use command in all details is showing in screen.
+
+3) Package.json file?
+	- Manage dependancies in your project.
+
+4) NPM init?
+	- npm init command create package.json file in your project.
+	- this command show list of details.
+	- then enter every related question upto end.
+	- set auther name with command 
+		- npm config set init-author-name "Nirav".
+		- npm set init-license "MIT".
+
+	- npm init --yes (no need to ans any question).
+	- npm install <package> -- save :- this command save package as dependancy in package.json
+
+5) devDependancy ?
+	- development dependancy package.
+	- it is required in project.
+	- npm install lodash --save-dev
+	- 
+	- if avoid devdependancy when install package then npm install --production.
+	- this command through devdependancy not install in project.
+	- example - grunt, gulp (depedancy that your project need during development or releasing)
+
+6) uninstall package in package.json file.
+	- npm uninstall moment --save (dependencies)
+	- npm uninstall moment --save-dev (devDependencies)
+
+7) listing?
+	- npm list command that show all list dependency in list view.
+	- npm list --depth 1 (show dependency in tree view in 1 level)
+	- npm list --depth 0 (show dependency in tree view in root level 0 level)
+
+- npm install npm@laster -g (install globally npm with latest version)

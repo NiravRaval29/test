@@ -1,0 +1,92 @@
+Angularjs 5
+==================
+Related Link : https://www.youtube.com/watch?v=J7OpEHoa-9U&list=PL9fcHFJHtFaalzA6n_EqY1cIgqWy0J1eU
+------------------------------------------------------------------------------------
+
+#) Angular5 How to install?
+	- Use Nodejs, Npm, typescript, angular/cli
+	- ng -v to defined angular 5 is installed or not.
+	
+	- npm install -g @angular/cli
+	
+	- ng new <projectName> 		this command use when create scaffolder in angularjs5
+	- cd <projectName>
+
+	- ng serve -o 		// this command through angular application compile/run and -o through after compile its open our defult browser.
+
+
+#) environment setup?
+	- main.ts file is setup  environment in our project.
+	- two type of environment (src/environments)
+		1. Developer Mode (environment.ts) //show any type of error in console in developer mode.
+		2. Production Mode (environment.prod.ts) //didnt show any type of error in console in production mode.
+
+#) Module?
+	- main.ts file include root module
+	- folder src/app/app.module.ts file included in main.ts file
+	- app.module is depend on component. and component are include 2 .ts file 1 .html , 1 .css, 
+	- If you import ts file that do not need to write .ts last in fileName.(Note)
+	- one directive(Decorator) is use that is :- @ngModule. this accept object that include 3 value
+		1. declarations Array : Component defined
+		2. Imports Array : Module Defined 
+		3. Providers Array : Provider Defiend
+		4. BootStrap Array : main booting(bootstrap) component is defined here. 
+
+#) app.component.ts file?
+	- import @angular/core component
+	- @Componet have object that are 4-5 property used.
+		1.selector : defined tag
+		2.templateUrl : load related component HTMl file in this component.
+		3.styleUrls : load css for perticuler module. override main css file.
+
+#) Component?
+	- component are building block of angular app.
+	- component are independent to defined task and work specifice manner.
+
+
+#) ng generate command.
+	- ng generate --help command is show how many way to use this ng generate command.
+	- application, class, component, directive, enum, guard, interface, module, pipe, service, universal, appshell. (that's all you can create with ng generate <command> command.)
+
+#) create new component?
+	- two type
+		1. automatic
+			- ng g c <component name> / ng generate component <componentName>
+			- create automatic folder with name of which you given.
+			- folder created into src/app folder
+			- app.module.ts file has import this new component file.
+			- like, import {newComponent} from './newComponent/newComponent';
+			- @ngModule decorator can be included new generator component in Declaration Array.
+				@ngModule({ declaration: [ newComponent]})
+
+#) two way binding?
+	- insert app.module.ts file in
+		import { FormsModule} from '@angular/forms';
+		[(ngModel)] = "name" 	//this way to two way binding use it.
+
+#) ngIf Directive?
+	- @angular/common included this ngIf directive.
+	- *ngIf="true/false"
+	- if you need to use else block than use template
+		<ng-template></ng-template>
+	ex:
+	<p *ngIf="show; then thenblock else elseblock"></p>
+	<ng-template #thenblock>
+		<h2> then block called </h2>
+	</ng-template>
+	<ng-template #elseblock>
+		<h2>Else Block called</h2>
+	</ng-template>
+
+
+#) ngSwitch Directive?
+	- @angular/common
+	- <div ngSwitch="showBlock">
+		<ngSwitchCase="1">This Is Block One</ngSwitchCase>
+		<ngSwitchCase="2">This Is Block Two</ngSwitchCase>
+		<ngSwitchDefault>This is Block Default</ngSwitchDefault>
+	</div>
+
+#) Routing?
+	- npm install --save @angular/router
+	- 

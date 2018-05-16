@@ -1,0 +1,38 @@
+https://www.javatpoint.com/expressjs-request
+
+1) What is ExpressJs?
+	- ExpressJs is "Web Framework" for NodeJS?
+	- It's Fast, robust and asynchronous in nature.
+	- Express is a one type of layer that helps to manage a server and routes.
+	- It's Provides a set of features to develop WEB and MOBILE application.
+	- It can be used to design Single-page, multi-page and hybride web application.
+	- Its Allow to middlewares respond to HTTP Requests.
+	- It defines a routing table which is used to perform different actions based on HTTP method and URL.
+	- It allows to dynamically render HTML Pages based on passing arguments to templates.
+
+2) Why use ExpressJs?
+	- Ultra Fast I/O.
+	- Asynchronous and single Threaded
+	- MVC like Structure
+	- Robust API makes routing Easy.
+
+3) 
+	- body-parser: This is a node.js middleware for handling JSON, Raw, Text and URL encoded form data.
+		- npm install body-parser --save 
+	- cookie-parser: It is used to parse Cookie header and populate req.cookies with an object keyed by the cookie names.
+		- npm install cookie-parser --save   
+	- multer: This is a node.js middleware for handling multipart/form-data.
+		- npm install multer --save   
+
+4) Get/Post Request
+	- GET requests are used to send only limited amount of data because data is sent into header while POST requests are used to send large amount of data because data is sent in the body.
+
+	
+5) Query String?
+	- nodejs Query string provides methods to deal with query string.
+	- it can be use to convert query string into JSON object and vice-versa.
+	- use require('querystring')
+	- two mathod use 
+		1. querystring.parse()				//convert querystring to json object
+		2. querystring.stringify()			// convert json object into query string.
+

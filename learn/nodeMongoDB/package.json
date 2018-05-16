@@ -1,0 +1,14 @@
+{
+  "name": "mongonodedemo",
+  "version": "1.0.0",
+  "description": "this is demo with mongo and nodejs connection ",
+  "main": "db_connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nirav Raval",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.1.0-beta4"
+  }
+}

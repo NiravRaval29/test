@@ -1,0 +1,69 @@
+Interview Preperation
+=====================
+1) Angularjs 
+(prefered by : https://www.c-sharpcorner.com/article/top-50-angularjs-interview-questions-and-answers/)
+(prefered by : https://www.onlineinterviewquestions.com/angular-js-interview-questions/#.Wuk89YhubIU)
+---------
+what is angular js? uses? drawback?
+what is SPA(single page Application).
+top reason why angular choose on developer.
+bootstrap process, automatic or manually
+different about 1 - 2 - 3 - 4 - 5. with uses and drawback.
+router,
+provider, stateProvider
+DI(dependancy injection)
+controller,module,view
+service,
+factory,
+constant,
+value,
+expression,
+inbuilt service
+directive, list of directive, custome directive
+on, emit, broadcast,
+lazyload,
+watch,watchall,watchgroup,
+one way - two way binding,
+$scope, $rootscope,
+filter,
+event, list of event
+ng-show ,ng-if diff?
+$sanitize, $q, $interpolation, $injector
+compile , link
+
+Explain AngularJS digest cycle?
+what is prefix $ and $$?
+Explain ng-repeat directive in Angular Js.
+Explain $q service, deferred and promises?
+What are Compile, Pre, and Post linking in AngularJS?
+List some commonly used services in Angular js.
+What is internationalization in angular js?
+What is Interpolation in angular Js.
+Explain Routing in Angular Js?
+Explain UI Routing in AngularJS?
+What is different between ng routing and UI routing?
+How to format a date in Angular js?
+How to do Animation in AngularJS?
+What is $emit, $broadcast and $on in AngularJS?
+What is different between ng-model and ng-bind?
+What is the use of ng-cloak directive?
+How $location is different from window.location?
+What is the difference between ‘this’ vs $scope in AngularJS controllers?
+How to send an Http post request in Angular js?
+Write a code to upload an image in Angular js?
+How to use $scope.$watch and $scope.$apply in AngularJS?
+How to access parent scope from child controller in AngularJs?
+How to do email and Phone no validation is AngularJs?
+How to implement caching in Angular 1.x?
+Explain the use of Ng-If, Ng-Switch, And Ng-Repeat directives?
+How to change start and end symbols used for AngularJS expressions?
+How to validate an URL in AngularJs?
+What is transclusion in Angular Js?
+What is “track by” in AngularJS and how does it work?
+How to set and get and destroy cookies in ANgular Js?
+Explain $templateCache in Angular Js? 
+What is the difference between a unit and end-to-end (e2e) test?
+List some testing Tools available in Angular JS?
+Explain .config() and .run() methods AngularJS?
+What is a locale ID in Angular JS?
+What is a Mocked Service in Angular Js? How to use it?

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is demo with angular and php mysql</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> 
+</head>
+<body ng-app="myApp">
+	<div ng-controller="displayStudentList">
+		<h1>{{title}}</h1>
+		<table class="table"  border="1">
+			
+			<thead>
+				<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>rollno</th>
+				<th>phoneno</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr >
+					<td></td>
+				</tr>
+			</tbody>
+			
+		</table>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	var app = angular.module("myApp",[]);
+
+	app.controller("displayStudentList",["$scope","$http",function($scope,$http){
+		console.log("controller called ");
+		$scope.title = "Hello Student";
+		$http.get('databasefile.php').then(function(res){
+			console.log("res",res);
+		})
+	}])
+</script>

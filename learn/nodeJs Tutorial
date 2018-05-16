@@ -1,0 +1,177 @@
+nodeJs Tutorial
+===============
+1) what is nodejs?
+	- Nodejs is runtime environment to creating web application on server side.
+	- NodeJs is also one type of library.
+
+1.1)  How node.js works?
+	- Node.js works on a v8 environment, it is a virtual machine that utilizes JavaScript as its scripting language and achieves high output via non-blocking I/O (asynchronous) and single threaded event loop.
+
+2) why nodejs use it?
+	- Nodejs is Extremely Fast because its's run on google V8 Engine.
+	- asynchronous event driven model.
+	- create games, chat room it easy.
+	- Nodejs use an event-driven, non-blocking I/O model that makes it lightweight and efficient.
+
+2.1) where NodeJs is Used?
+	- Web Application.
+	- Network  Application.
+	- Distributed Application.
+	- General Purpose Application.
+
+3) NodeJs How to install?
+	- open https://nodejs.org/en/
+	- download Stable version.
+	- installed 
+	- npm -v through check your node version
+
+4) what is anonymous function?
+	- A function have no name that's called anonymous function.
+	- ex : var test = function(stuff){console.log("test",stuff);}
+
+5) callback function?
+	- A Callback function is called at the completion of a given task.
+	- two type of work here.
+	-  A synchronous operation blocks a process till the operation completes. 
+	-  An asynchronous operation is non-blocking and only initiates the operation.
+
+5.1) what is callback hell?
+	- callback hell is the result of heavily nested callbacks that makes the code not only unreadable but also difficult to maintain.
+
+5.2) how to fix callback hell problem?
+	- handler every single error
+	- keep you code shallow.
+	- modularize. 
+
+6) synchronouse and asynchronouse? (Also know two type of API Function)
+	- the script stop and waits for the server to reply before continuing.
+	-  i.e. the interaction between the customer and the server is synchronous. Synchronous is not recommended as it blocks/hangs the page until the response is received from the server.
+
+	- Asynchronous Ajax requests handle the reply as and when it comes and allows the page to continue to be processed. Under Asynchronous, if there is any problem in the request it can be modified and recovered. The request doesn’t block the client as the browser is responsive. The user can perform other operations as well.
+
+	- Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+
+	- Synchronous / Blocking Example :
+		const fs = require('fs');
+		const data = fs.readFileSync('/file.md'); // blocks here until file is read	
+
+	- Asynchronous / non-blocking Example :
+		const fs = require('fs');
+		fs.readFile('/file.md', function(err, data) {
+		  if (err) throw err;
+		});						// This function is a callback function.
+
+7) What is an error-first callback?
+	- Error-first callbacks are essentially used to pass errors and data. By default, the first argument is always an error object, where the user needs to check if something is wrong.
+
+8) Explain the role of REPL in Node.js.
+
+	- As the name suggests, REPL (Read Eval print Loop) performs the tasks of – Read, Evaluate, Print and Loop. The REPL in Node.js is used to execute ad-hoc Javascript statements. The REPL shell allows entry to javascript directly into a shell prompt and evaluates the results. For the purpose of testing, debugging, or experimenting, REPL is very critical.  
+
+9) What are the functionalities of NPM in Node.js?
+
+	- NPM (Node package Manager) provides two functionalities:
+
+	- Online repository for Node.js packages
+	- Command line utility for installing packages, version management and dependency management of Node.js packages
+
+10) Explain chaining in Node.js.
+
+	- Chaining is a mechanism whereby the output of one stream is connected to another stream creating a chain of multiple stream operations.
+
+11) what is streams in nodejs?
+	- Streams are objects that allow reading of data from the source and writing of data to the destination as a continuous process.
+
+	its 4 type.
+	1. read operation
+	2. write operation
+	3. both read and write operation
+	4. duplex stream is perform computations based on the available input.
+
+	Example :
+			-var fs = require("fs");
+		var data = '';
+		
+		// Create a readable stream
+		var readerStream = fs.createReadStream('input.txt');
+
+		// Set the encoding to be utf8. 
+		readerStream.setEncoding('UTF8');
+
+		// Handle stream events --> data, end, and error
+		readerStream.on('data', function(chunk) {
+		data += chunk;
+		});
+		readerStream.on('end',function(){
+		console.log(data);
+		});
+		readerStream.on('error', function(err){
+		console.log(err.stack);
+		});
+		console.log("Program Ended");
+
+12) What is Piping the stream?
+	- piping is a mechanism where we provide the output of one stream as the input to another stream.
+	- its normally to used to get data from stream and to pass the output of that stream to another stream.
+	- there is no limit on piping operations.
+
+	Example :
+			var fs = require('fs');
+
+			var readStream = fs.createReadStream('input.txt');
+
+			var writeStream = fs.createWriteStream('output.txt');
+
+			readStream.pipe(writeStream);
+
+			console.log("Program Ended");
+
+
+
+=========================================================================================================
+
+13) Nodejs pros - cons?
+	prose : 
+		- Fast-Execution speed.
+		- Faster to market development speed
+		- less line of code
+		- proven with high volume systems.
+
+	cons :
+		- write event driven code is complex compared to synchronouse code.
+		- write large bussiness logic centric system is difficult
+		- callback hell
+		- exception handling is not straight forward
+
+14)where node js not suitable ?
+	- large bussiness logic centric system.
+	- heavy server side computation is required.
+
+15)What is Event in nodejs?
+	- Each Object in nodejs emit an asynchronous event.
+	- Event is handled by an object EventEmitter.
+	- EventEmitter is under every object.
+	- var events = require('event'); var MyEvents = events.EventEmitter;
+	- Example : MyEvent.on('myeventName',function(msg){}) //handler event.
+
+16)What is eventloop?
+	- Node.js is a single-threaded application. but it can support concurrency through the concept of event and callback.
+	- Nodejs use observer pattern.
+
+17)what is eventEmitter?
+	- nodejs allows us to create and handle custom event easily by using events module.
+	- event module included eventEmitter class which can be used to raise and handle custom events.
+	- EventEmitter -> EventLoop -> EventHandler 		//flow
+	- EventEmitter provide multiple property like on and emit.
+	- On Property is used to bind a function with the event and emit is used to fire an event.
+
+18) what is buffer in nodejs?
+	- nodejs provide buffer class to store raw data similar to an array of integers.
+	- buffer class is a global class.
+	- it can accessed in application without importing buffer module.
+	- var buffer = new Buffer('10'); / var buffer = new Buffer([10,20,30])
+
+19) Zlib in nodejs?
+	- zlib is a software library used for data compression.
+	- zlib module is used to provide compression and decompression(zip and unzip).
+	- 

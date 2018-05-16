@@ -1,0 +1,11 @@
+{
+  "name": "myexample2",
+  "version": "1.0.1",
+  "description": "Express example2",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Nirav Raval",
+  "license": "ISC"
+}
